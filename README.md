@@ -4,24 +4,15 @@
 
 ------------------------------------------------------
 
-[![PyPI Version](https://badge.fury.io/py/causalml.svg)](https://pypi.org/project/causalml/)
-[![Build Status](https://github.com/uber/causalml/actions/workflows/python-test.yaml/badge.svg)](https://github.com/uber/causalml/actions/workflows/python-test.yaml)
-[![Documentation Status](https://readthedocs.org/projects/causalml/badge/?version=latest)](http://causalml.readthedocs.io/en/latest/?badge=latest)
-[![Downloads](https://pepy.tech/badge/causalml)](https://pepy.tech/project/causalml)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3015/badge)](https://bestpractices.coreinfrastructure.org/projects/3015)
-
-
 
 # Causal ML: Machine Learning for Causal Inference from Observational Data
 
-**Causal ML** is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms based on recent
-research [[1]](#Literature). It provides a standard interface that allows user to estimate the Conditional Average Treatment Effect (CATE) or Individual Treatment
- Effect (ITE) from experimental or observational data. Essentially, it estimates the causal impact of intervention `T` on outcome `Y` for users
- with observed features `X`, without strong assumptions on the model form. Typical use cases include
+**This Causal Inference (CI) project is about causal (treatment) effect estimation. That is, the problem is to infer effects of interventions on a system given only observed (factual) outcomes, without access to ‘alternative reality’ results (counterfactuals) — the issue known as the fundamental problem of causal inference.
 
-* **Campaign targeting optimization**: An important lever to increase ROI in an advertising campaign is to target the ad to the set of customers who will have a favorable response in a given KPI such as engagement or sales. CATE identifies these customers by estimating the effect of the KPI from ad exposure at the individual level from A/B experiment or historical observational data.
 
-* **Personalized engagement**: A company has multiple options to interact with its customers such as different product choices in up-sell or messaging channels for communications. One can use CATE to estimate the heterogeneous treatment effect for each customer and treatment option combination for an optimal personalized recommendation system.
+* **To give you a better intuition behind the problem, consider the following example. Imagine I have a headache. I decide to take aspirin to get rid of it. After some time, the headache goes away. Now I ask myself: Would the headache go away without me taking the aspirin? Would it go away as fast? The act of taking the aspirin is our intervention (also called treatment). We have two actions possible: take it (t = 1) or not take it (t = 0). I decided to take it, so after a while we are able to observe the result (outcome) of that action (y1). Now, the core problem here is that in order to answer the above questions about the effectiveness of the aspirin (the causal effect), we have to compare the outcomes of both scenarios (when I take the aspirin and when I do not), that is, we need access to both y0 and y1.
+Unfortunately, the way our world works is that once we apply an action, it is impossible to go back in time and change our decision. Thus, the only outcome we will ever observe is the one that actually happened (called factual). We cannot observe the other one that did not happen (counterfactual). This known problem is partially addressed through Randomised Controlled Trials (RCTs), but those experiments are usually very expensive, at times even impossible due to ethical reasons (we cannot make participants smoke/drink alcohol for a number of years). An alternative to RCTs are passively collected observational data, for instance, historical information about past patients in a hospital. However, we have to be careful about how we use such datasets as they are not randomised as RCTs are, causing some issues
+as a consequence. Some of the most common ones are selection bias (e.g. underrepresented groups of people), hidden confounders (omitted important features), or covariate shifts (discrepancies between the distributions of treated and control units).
 
 The package currently supports the following methods
 
