@@ -6,6 +6,7 @@
 
 
 # Causal ML: Machine Learning for Causal Inference from Observational Data
+CE888 Assignment 2 (21a3)
 
 **This Causal Inference (CI) project is about causal (treatment) effect estimation. That is, the problem is to infer effects of interventions on a system given only observed (factual) outcomes, without access to ‘alternative reality’ results (counterfactuals) — the issue known as the fundamental problem of causal inference.
 
