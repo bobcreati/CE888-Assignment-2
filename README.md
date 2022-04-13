@@ -27,13 +27,12 @@ The package currently supports the following methods
     * R-learner [[6]](#Literature)
     * Doubly Robust (DR) learner [[7]](#Literature)
     * TMLE learner [[8]](#Literature)
-* **Instrumental variables algorithms**
-    * 2-Stage Least Squares (2SLS)
-    * Doubly Robust (DR) IV [[9]](#Literature)
-* **Neural-network-based algorithms**
-    * CEVAE [[10]](#Literature)
-    * DragonNet [[11]](#Literature) - with `causalml[tf]` installation (see [Installation](#installation))
+The general aims of this project are as follows:
 
+• Explore common CI benchmark datasets, their properties, and relevant performance metrics.
+• Get familiar with well-established types of CI estimators, including an understanding of their main
+characteristics.
+• Develop an intuition about how CI problems relate to the usual machine learning tasks.
 
 # Installation
 
